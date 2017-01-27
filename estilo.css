@@ -1,8 +1,8 @@
 .navbar-fundo{
-	background: #3F51B5;
+	background: #616161;
 }
 .navbar-inverse .navbar-nav>li>a{
-	color: #C5CAE9;
+	color: #BDBDBD;
 }
 .navbar-inverse .navbar-nav>li>a:hover{
 	color: #FFFFFF;
@@ -12,7 +12,7 @@
 	margin-left: 5px;
 }
 .brackets{
-	color: #C5CAE9;
+	color: #BDBDBD;
 	font-size: 22px;
 }
 .barra{
