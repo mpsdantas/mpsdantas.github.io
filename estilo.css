@@ -1,3 +1,17 @@
+html, body { 
+	height: 100%; 
+}
+body {
+  	display: table;
+  	width: 100%;
+}
+.page-row {
+  	color: #ffffff;
+  	background: #616161;
+	display: table-row;
+  	height: 20px;
+  	text-align: center;
+}
 .navbar-fundo{
 	background: #616161;
 }
