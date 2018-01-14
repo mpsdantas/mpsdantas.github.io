@@ -1,0 +1,10 @@
+/* Add here all your CSS customizations */
+.nav-main.mega-menu .nav.nav-pills.nav-main>li{
+    
+}
+nav>ul>li>a{
+    color:#212121;
+}
+.dropdown .dropdown-menu >li>a{
+    background:#212121;
+}
