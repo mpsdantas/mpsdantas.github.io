@@ -4,13 +4,13 @@
  * @author     Nick Pope <nick@nickpope.me.uk>
  * @copyright  Copyright © 2010, Mike Cochrane, Nick Pope
  * @license    http://www.apache.org/licenses/LICENSE-2.0  Apache License v2.0
- * @package    Twitter
+ * @package    instagram
  */
 
 require_once 'Regex.php';
 
 /**
- * Twitter Autolink Class
+ * instagram Autolink Class
  *
  * Parses tweets and generates HTML anchor tags around URLs, usernames,
  * username/list pairs and hashtags.
@@ -23,9 +23,9 @@ require_once 'Regex.php';
  * @author     Nick Pope <nick@nickpope.me.uk>
  * @copyright  Copyright © 2010, Mike Cochrane, Nick Pope
  * @license    http://www.apache.org/licenses/LICENSE-2.0  Apache License v2.0
- * @package    Twitter
+ * @package    instagram
  */
-class Twitter_Autolink extends Twitter_Regex {
+class instagram_Autolink extends instagram_Regex {
 
   /**
    * CSS class for auto-linked URLs.
@@ -60,21 +60,21 @@ class Twitter_Autolink extends Twitter_Regex {
    *
    * @var  string
    */
-  protected $url_base_user = 'http://twitter.com/';
+  protected $url_base_user = 'http://instagram.com/';
 
   /**
    * URL base for list links (the username/list without the @ will be appended).
    *
    * @var  string
    */
-  protected $url_base_list = 'http://twitter.com/';
+  protected $url_base_list = 'http://instagram.com/';
 
   /**
    * URL base for hashtag links (the hashtag without the # will be appended).
    *
    * @var  string
    */
-  protected $url_base_hash = 'http://twitter.com/search?q=%23';
+  protected $url_base_hash = 'http://instagram.com/search?q=%23';
 
   /**
    * Whether to include the value 'nofollow' in the 'rel' attribute.
@@ -114,7 +114,7 @@ class Twitter_Autolink extends Twitter_Regex {
    *
    * @see  __construct()
    *
-   * @return  Twitter_Autolink
+   * @return  instagram_Autolink
    */
   public static function create($tweet, $full_encode = false) {
     return new self($tweet, $full_encode);
@@ -158,7 +158,7 @@ class Twitter_Autolink extends Twitter_Regex {
    *
    * @param  string  $v  CSS class for URL links.
    *
-   * @return  Twitter_Autolink  Fluid method chaining.
+   * @return  instagram_Autolink  Fluid method chaining.
    */
   public function setURLClass($v) {
     $this->class_url = trim($v);
@@ -179,7 +179,7 @@ class Twitter_Autolink extends Twitter_Regex {
    *
    * @param  string  $v  CSS class for username links.
    *
-   * @return  Twitter_Autolink  Fluid method chaining.
+   * @return  instagram_Autolink  Fluid method chaining.
    */
   public function setUsernameClass($v) {
     $this->class_user = trim($v);
@@ -200,7 +200,7 @@ class Twitter_Autolink extends Twitter_Regex {
    *
    * @param  string  $v  CSS class for username/list links.
    *
-   * @return  Twitter_Autolink  Fluid method chaining.
+   * @return  instagram_Autolink  Fluid method chaining.
    */
   public function setListClass($v) {
     $this->class_list = trim($v);
@@ -221,7 +221,7 @@ class Twitter_Autolink extends Twitter_Regex {
    *
    * @param  string  $v  CSS class for hashtag links.
    *
-   * @return  Twitter_Autolink  Fluid method chaining.
+   * @return  instagram_Autolink  Fluid method chaining.
    */
   public function setHashtagClass($v) {
     $this->class_hash = trim($v);
@@ -242,7 +242,7 @@ class Twitter_Autolink extends Twitter_Regex {
    *
    * @param  bool  $v  The value to add to the 'target' attribute.
    *
-   * @return  Twitter_Autolink  Fluid method chaining.
+   * @return  instagram_Autolink  Fluid method chaining.
    */
   public function setNoFollow($v) {
     $this->nofollow = $v;
@@ -273,7 +273,7 @@ class Twitter_Autolink extends Twitter_Regex {
    *
    * @param  bool  $v  The value to add to the 'target' attribute.
    *
-   * @return  Twitter_Autolink  Fluid method chaining.
+   * @return  instagram_Autolink  Fluid method chaining.
    */
   public function setExternal($v) {
     $this->external = $v;
@@ -302,7 +302,7 @@ class Twitter_Autolink extends Twitter_Regex {
    *
    * @param  string  $v  The value to add to the 'target' attribute.
    *
-   * @return  Twitter_Autolink  Fluid method chaining.
+   * @return  instagram_Autolink  Fluid method chaining.
    */
   public function setTarget($v) {
     $this->target = trim($v);

@@ -3,13 +3,13 @@
  * @author     Nick Pope <nick@nickpope.me.uk>
  * @copyright  Copyright © 2010, Nick Pope
  * @license    http://www.apache.org/licenses/LICENSE-2.0  Apache License v2.0
- * @package    Twitter
+ * @package    instagram
  */
 
 require_once 'Regex.php';
 
 /**
- * Twitter HitHighlighter Class
+ * instagram HitHighlighter Class
  *
  * Performs "hit highlighting" on tweets that have been auto-linked already.
  * Useful with the results returned from the search API.
@@ -21,9 +21,9 @@ require_once 'Regex.php';
  * @author     Nick Pope <nick@nickpope.me.uk>
  * @copyright  Copyright © 2010, Nick Pope
  * @license    http://www.apache.org/licenses/LICENSE-2.0  Apache License v2.0
- * @package    Twitter
+ * @package    instagram
  */
-class Twitter_HitHighlighter extends Twitter_Regex {
+class instagram_HitHighlighter extends instagram_Regex {
 
   /**
    * The tag to surround hits with.
@@ -40,7 +40,7 @@ class Twitter_HitHighlighter extends Twitter_Regex {
    *
    * @see  __construct()
    *
-   * @return  Twitter_HitHighlighter
+   * @return  instagram_HitHighlighter
    */
   public static function create($tweet, $full_encode = false) {
     return new self($tweet, $full_encode);
@@ -83,7 +83,7 @@ class Twitter_HitHighlighter extends Twitter_Regex {
    *
    * @param  string  $v  The tag name.
    *
-   * @return  Twitter_HitHighlighter  Fluid method chaining.
+   * @return  instagram_HitHighlighter  Fluid method chaining.
    */
   public function setTag($v) {
     $this->tag = $v;

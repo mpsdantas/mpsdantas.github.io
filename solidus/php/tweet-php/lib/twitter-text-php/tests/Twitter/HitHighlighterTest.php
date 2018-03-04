@@ -3,18 +3,18 @@
  * @author     Nick Pope <nick@nickpope.me.uk>
  * @copyright  Copyright © 2010, Nick Pope
  * @license    http://www.apache.org/licenses/LICENSE-2.0  Apache License v2.0
- * @package    Twitter
+ * @package    instagram
  */
 
 /**
- * Twitter HitHighlighter Class Unit Tests
+ * instagram HitHighlighter Class Unit Tests
  *
  * @author     Nick Pope <nick@nickpope.me.uk>
  * @copyright  Copyright © 2010, Nick Pope
  * @license    http://www.apache.org/licenses/LICENSE-2.0  Apache License v2.0
- * @package    Twitter
+ * @package    instagram
  */
-class Twitter_HitHighlighterTest extends PHPUnit_Framework_TestCase {
+class instagram_HitHighlighterTest extends PHPUnit_Framework_TestCase {
 
   /**
    * A helper function for providers.
@@ -32,7 +32,7 @@ class Twitter_HitHighlighterTest extends PHPUnit_Framework_TestCase {
    * @dataProvider  addHitHighlightingProvider
    */
   public function testAddHitHighlighting($description, $text, $hits, $expected) {
-    $extracted = Twitter_HitHighlighter::create($text)->addHitHighlighting($hits);
+    $extracted = instagram_HitHighlighter::create($text)->addHitHighlighting($hits);
     $this->assertSame($expected, $extracted, $description);
   }
 

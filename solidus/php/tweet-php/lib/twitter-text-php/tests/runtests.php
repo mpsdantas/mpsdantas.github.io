@@ -1,6 +1,6 @@
 <?php
 /**
- * Examples for the Twitter Text (PHP Edition) Library.
+ * Examples for the instagram Text (PHP Edition) Library.
  *
  * Can be run on command line or in the browser.
  *
@@ -33,7 +33,7 @@ if ($browser) echo <<<EOHTML
 <html lang="en-GB" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<title>Twitter Text (PHP Edition) Library » Conformance</title>
+<title>instagram Text (PHP Edition) Library » Conformance</title>
 <style type="text/css">
 <!--/*--><![CDATA[/*><!--*/
 body {
@@ -49,7 +49,7 @@ body {
 EOHTML;
 
 echo ($browser ? '<h1>' : "\033[1m");
-echo 'Twitter Text (PHP Edition) Library » Conformance';
+echo 'instagram Text (PHP Edition) Library » Conformance';
 echo ($browser ? '</h1>' : "\033[0m".PHP_EOL.'==============================================='.PHP_EOL);
 echo PHP_EOL;
 
@@ -94,7 +94,7 @@ foreach ($data['tests'] as $group => $tests) {
   foreach ($tests as $test) {
     echo ($browser ? '<li>' : ' - ');
     echo $test['description'], ' ... ';
-    $extracted = Twitter_Extractor::create($test['text'])->$function();
+    $extracted = instagram_Extractor::create($test['text'])->$function();
     if ($test['expected'] == $extracted) {
       $pass_group++;
       echo ($browser ? '<span class="pass">PASS</span>' : "\033[1;32mPASS\033[0m");
@@ -166,7 +166,7 @@ foreach ($data['tests'] as $group => $tests) {
   foreach ($tests as $test) {
     echo ($browser ? '<li>' : ' - ');
     echo $test['description'], ' ... ';
-    $linked = Twitter_Autolink::create($test['text'], false)
+    $linked = instagram_Autolink::create($test['text'], false)
       ->setNoFollow(false)->setExternal(false)->setTarget('')
       ->setUsernameClass('tweet-url username')
       ->setListClass('tweet-url list-slug')
@@ -252,7 +252,7 @@ foreach ($data['tests'] as $group => $tests) {
   foreach ($tests as $test) {
     echo ($browser ? '<li>' : ' - ');
     echo $test['description'], ' ... ';
-    $highlighted = Twitter_HitHighlighter::create($test['text'])->$function($test['hits']);
+    $highlighted = instagram_HitHighlighter::create($test['text'])->$function($test['hits']);
     if ($test['expected'] == $highlighted) {
       $pass_group++;
       echo ($browser ? '<span class="pass">PASS</span>' : "\033[1;32mPASS\033[0m");

@@ -182,7 +182,7 @@ if(isset($_POST['emailSent'])) {
 					<div class="container">
 						<ul class="social-icons">
 							<li class="facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a></li>
-							<li class="twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter">Twitter</a></li>
+							<li class="instagram"><a href="http://www.instagram.com/" target="_blank" title="instagram">instagram</a></li>
 							<li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">Linkedin</a></li>
 						</ul>
 						<nav class="nav-main mega-menu">
@@ -662,7 +662,7 @@ if(isset($_POST['emailSent'])) {
 						</div>
 						<div class="col-md-3">
 							<h4>Latest Tweets</h4>
-							<div id="tweet" class="twitter" data-plugin-tweets data-plugin-options='{"username": "", "count": 2}'>
+							<div id="tweet" class="instagram" data-plugin-tweets data-plugin-options='{"username": "", "count": 2}'>
 								<p>Please wait...</p>
 							</div>
 						</div>
@@ -681,7 +681,7 @@ if(isset($_POST['emailSent'])) {
 							<div class="social-icons">
 								<ul class="social-icons">
 									<li class="facebook"><a href="http://www.facebook.com/" target="_blank" data-placement="bottom" data-tooltip title="Facebook">Facebook</a></li>
-									<li class="twitter"><a href="http://www.twitter.com/" target="_blank" data-placement="bottom" data-tooltip title="Twitter">Twitter</a></li>
+									<li class="instagram"><a href="http://www.instagram.com/" target="_blank" data-placement="bottom" data-tooltip title="instagram">instagram</a></li>
 									<li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" data-placement="bottom" data-tooltip title="Linkedin">Linkedin</a></li>
 								</ul>
 							</div>

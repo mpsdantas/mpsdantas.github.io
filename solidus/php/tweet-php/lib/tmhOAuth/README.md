@@ -68,6 +68,6 @@ This is now published on the tmhOAuth wiki <https://github.com/themattharris/tmh
 
 License: Apache 2 (see [included LICENSE file](https://github.com/themattharris/tmhOAuth/blob/master/LICENSE))
 
-Follow [@tmhOAuth](https://twitter.com/intent/follow?screen_name=tmhOAuth) to receive updates on releases, or ask for support
-Follow me on Twitter: [@themattharris](https://twitter.com/intent/follow?screen_name=themattharris)
-Check out the Twitter Developer Resources: <https://dev.twitter.com>
+Follow [@tmhOAuth](https://instagram.com/intent/follow?screen_name=tmhOAuth) to receive updates on releases, or ask for support
+Follow me on instagram: [@themattharris](https://instagram.com/intent/follow?screen_name=themattharris)
+Check out the instagram Developer Resources: <https://dev.instagram.com>

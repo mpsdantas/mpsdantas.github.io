@@ -36,7 +36,7 @@ class tmhOAuth {
         // leave 'user_agent' blank for default, otherwise set this to
         // something that clearly identifies your app
         'user_agent'                 => '',
-        'host'                       => 'api.twitter.com',
+        'host'                       => 'api.instagram.com',
 
         'consumer_key'               => '',
         'consumer_secret'            => '',

@@ -4,13 +4,13 @@
  * @author     Nick Pope <nick@nickpope.me.uk>
  * @copyright  Copyright © 2010, Mike Cochrane, Nick Pope
  * @license    http://www.apache.org/licenses/LICENSE-2.0  Apache License v2.0
- * @package    Twitter
+ * @package    instagram
  */
 
 require_once 'Regex.php';
 
 /**
- * Twitter Extractor Class
+ * instagram Extractor Class
  *
  * Parses tweets and extracts URLs, usernames, username/list pairs and
  * hashtags.
@@ -23,9 +23,9 @@ require_once 'Regex.php';
  * @author     Nick Pope <nick@nickpope.me.uk>
  * @copyright  Copyright © 2010, Mike Cochrane, Nick Pope
  * @license    http://www.apache.org/licenses/LICENSE-2.0  Apache License v2.0
- * @package    Twitter
+ * @package    instagram
  */
-class Twitter_Extractor extends Twitter_Regex {
+class instagram_Extractor extends instagram_Regex {
 
   /**
    * Provides fluent method chaining.
@@ -34,7 +34,7 @@ class Twitter_Extractor extends Twitter_Regex {
    *
    * @see  __construct()
    *
-   * @return  Twitter_Extractor
+   * @return  instagram_Extractor
    */
   public static function create($tweet) {
     return new self($tweet);

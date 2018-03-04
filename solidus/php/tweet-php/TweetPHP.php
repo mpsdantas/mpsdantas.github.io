@@ -8,22 +8,22 @@
   * @link  http://f6design.com/journal/2013/06/20/tweetphp-display-tweets-on-your-website-using-php/
   * 
   * Notes:
-  * To interact with Twitter's API you will need to create an API KEY:
-  * https://dev.twitter.com/apps
+  * To interact with instagram's API you will need to create an API KEY:
+  * https://dev.instagram.com/apps
   * After creating your API Key you will need to pass the following values to the class
   * constructor: "Consumer key", "Consumer secret", "Access token", "Access token secret"
   * --
   * Options can be overridden by passing an array of key/value pairs to the class
   * constructor. At a minimum you must set the consumer_key, consumer_secret, access_token,
-  * access_token_secret and twitter_screen_name options.
+  * access_token_secret and instagram_screen_name options.
   * --
   * You may also need to change the cache_file option to point at a directory/file on your
-  * web server. Caching is employed because Twitter rate limits how many times their feeds
+  * web server. Caching is employed because instagram rate limits how many times their feeds
   * can be accessed per hour.
   * 
   * Credits:
   * Feed parsing: https://github.com/themattharris/tmhOAuth
-  * Hashtag/username parsing: https://github.com/mikenz/twitter-text-php
+  * Hashtag/username parsing: https://github.com/mikenz/instagram-text-php
   */
  class TweetPHP {
     private $tmhOAuth;
@@ -45,26 +45,26 @@
           'consumer_secret'       => '',
           'access_token'          => '',
           'access_token_secret'   => '',
-          'twitter_screen_name'   => '',
-          'cache_file'            => dirname(__FILE__) . '/cache/twitter.txt', // Where on the server to save the cached formatted tweets
-          'cache_file_raw'        => dirname(__FILE__) . '/cache/twitter-array.txt', // Where on the server to save the cached raw tweets
+          'instagram_screen_name'   => '',
+          'cache_file'            => dirname(__FILE__) . '/cache/instagram.txt', // Where on the server to save the cached formatted tweets
+          'cache_file_raw'        => dirname(__FILE__) . '/cache/instagram-array.txt', // Where on the server to save the cached raw tweets
           'cachetime'             => 60 * 60, // Seconds to cache feed (1 hour).
           'tweets_to_display'     => 10, // How many tweets to fetch
           'ignore_replies'        => true, // Ignore @replies
           'ignore_retweets'       => true, // Ignore retweets
-          'twitter_style_dates'   => false, // Use twitter style dates e.g. 2 hours ago
-          'twitter_date_text'     => array('seconds', 'minutes', 'about', 'hour', 'ago'),
+          'instagram_style_dates'   => false, // Use instagram style dates e.g. 2 hours ago
+          'instagram_date_text'     => array('seconds', 'minutes', 'about', 'hour', 'ago'),
           'date_format'           => '%I:%M %p %b %e%O', // The defult date format e.g. 12:08 PM Jun 12th. See: http://php.net/manual/en/function.strftime.php
           'date_lang'             => null, // Language for date e.g. 'fr_FR'. See: http://php.net/manual/en/function.setlocale.php
           'format'                => 'html', // Can be 'html' or 'array'
-          'twitter_wrap_open'     => '<h2>Latest tweets</h2><ul id="twitter">',
-          'twitter_wrap_close'    => '</ul>',
+          'instagram_wrap_open'     => '<h2>Latest tweets</h2><ul id="instagram">',
+          'instagram_wrap_close'    => '</ul>',
           'tweet_wrap_open'       => '<li><span class="status">',
           'meta_wrap_open'        => '</span><span class="meta"> ',
           'meta_wrap_close'       => '</span>',
           'tweet_wrap_close'      => '</li>',
-          'error_message'         => 'Oops, our twitter feed is unavailable right now.',
-          'error_link_text'       => 'Follow us on Twitter',
+          'error_message'         => 'Oops, our instagram feed is unavailable right now.',
+          'error_link_text'       => 'Follow us on instagram',
           'debug'                 => false
         ),
         $options
@@ -93,19 +93,19 @@
         $this->fetch_tweets();
       }
 
-      // In case the feed did not parse or load correctly, show a link to the Twitter account.
+      // In case the feed did not parse or load correctly, show a link to the instagram account.
       if (!$this->tweet_found) {
         $this->add_debug_item('No tweets were found. error_message will be displayed.');
-        $this->tweet_list = $this->options['twitter_wrap_open'] . $this->options['tweet_wrap_open'] . $this->options['error_message'] . ' ' . $this->options['meta_wrap_open'] .'<a href="http://twitter.com/' . $this->options['twitter_screen_name'] . '">' . $this->options['error_link_text'] . '</a>' . $this->options['meta_wrap_close'] . $this->options['tweet_wrap_close'] . $this->options['twitter_wrap_close'];
+        $this->tweet_list = $this->options['instagram_wrap_open'] . $this->options['tweet_wrap_open'] . $this->options['error_message'] . ' ' . $this->options['meta_wrap_open'] .'<a href="http://instagram.com/' . $this->options['instagram_screen_name'] . '">' . $this->options['error_link_text'] . '</a>' . $this->options['meta_wrap_close'] . $this->options['tweet_wrap_close'] . $this->options['instagram_wrap_close'];
         $this->tweet_array = array('Error fetching or loading tweets');
       }
     }
 
     /**
-     * Fetch tweets using Twitter API
+     * Fetch tweets using instagram API
      */
     private function fetch_tweets () {
-      $this->add_debug_item('Fetching fresh tweets using Twitter API.');
+      $this->add_debug_item('Fetching fresh tweets using instagram API.');
 
       require_once(dirname(__FILE__) . '/lib/tmhOAuth/tmhOAuth.php');
       
@@ -117,9 +117,9 @@
         'secret'          => $this->options['access_token_secret']
       ));
 
-      // Request Twitter timeline.
+      // Request instagram timeline.
       $params = array(
-        'screen_name' => $this->options['twitter_screen_name']
+        'screen_name' => $this->options['instagram_screen_name']
       );
       if ($this->options['ignore_retweets']) {
         $params['include_rts'] = 'false';
@@ -134,8 +134,8 @@
       if ($response_code == 200) {
         $data = json_decode($this->tmhOAuth->response['response'], true);
 
-        // Open the twitter wrapping element.
-        $html = $this->options['twitter_wrap_open'];
+        // Open the instagram wrapping element.
+        $html = $this->options['instagram_wrap_open'];
 
         // Iterate over tweets.
         foreach($data as $tweet) {
@@ -146,8 +146,8 @@
           }
         }
 
-        // Close the twitter wrapping element.
-        $html .= $this->options['twitter_wrap_close'];
+        // Close the instagram wrapping element.
+        $html .= $this->options['instagram_wrap_close'];
 
         // Save the formatted tweet list to a file. 
         $file = fopen($this->options['cache_file'], 'w');
@@ -181,23 +181,23 @@
       $utc_offset = $tweet['user']['utc_offset'];
       $tweet_time = strtotime($tweet['created_at']) + $utc_offset;
 
-      if ($this->options['twitter_style_dates']){
-        // Convert tweet timestamp into Twitter style date ("About 2 hours ago")
+      if ($this->options['instagram_style_dates']){
+        // Convert tweet timestamp into instagram style date ("About 2 hours ago")
         $current_time = time();
         $time_diff = abs($current_time - $tweet_time);
         switch ($time_diff) {
           case ($time_diff < 60):
-            $display_time = $time_diff . ' ' . $this->options['twitter_date_text'][0] . ' ' . $this->options['twitter_date_text'][4];
+            $display_time = $time_diff . ' ' . $this->options['instagram_date_text'][0] . ' ' . $this->options['instagram_date_text'][4];
             break;      
           case ($time_diff >= 60 && $time_diff < 3600):
             $min = floor($time_diff/60);
-            $display_time = $min . ' ' . $this->options['twitter_date_text'][1] . ' ' . $this->options['twitter_date_text'][4];
+            $display_time = $min . ' ' . $this->options['instagram_date_text'][1] . ' ' . $this->options['instagram_date_text'][4];
             break;      
           case ($time_diff >= 3600 && $time_diff < 86400):
             $hour = floor($time_diff/3600);
-            $display_time = $this->options['twitter_date_text'][2] . ' ' . $hour . ' ' . $this->options['twitter_date_text'][3];
+            $display_time = $this->options['instagram_date_text'][2] . ' ' . $hour . ' ' . $this->options['instagram_date_text'][3];
             if ($hour > 1){ $display_time .= 's'; }
-            $display_time .= ' ' . $this->options['twitter_date_text'][4];
+            $display_time .= ' ' . $this->options['instagram_date_text'][4];
             break;          
           default: 
             $format = str_replace('%O', date('S', $tweet_time), $this->options['date_format']);
@@ -209,7 +209,7 @@
         $display_time = strftime($format, $tweet_time);
       }
 
-      $href = 'http://twitter.com/' . $tweet['user']['screen_name'] . '/status/' . $tweet['id_str'];
+      $href = 'http://instagram.com/' . $tweet['user']['screen_name'] . '/status/' . $tweet['id_str'];
       return $this->options['tweet_wrap_open'] . $tweet_text . $this->options['meta_wrap_open'] . '<a href="' . $href . '">' . $display_time . '</a>' . $this->options['meta_wrap_close'] . $this->options['tweet_wrap_close'];
     }
 
@@ -244,9 +244,9 @@
      * in a tweet to HTML links.
      */
     public function autolink ($tweet) {
-      require_once(dirname(__FILE__) . '/lib/twitter-text-php/lib/Twitter/Autolink.php');
+      require_once(dirname(__FILE__) . '/lib/instagram-text-php/lib/instagram/Autolink.php');
 
-      $autolinked_tweet = Twitter_Autolink::create($tweet, false)
+      $autolinked_tweet = instagram_Autolink::create($tweet, false)
         ->setNoFollow(false)->setExternal(false)->setTarget('')
         ->setUsernameClass('')
         ->setHashtagClass('')

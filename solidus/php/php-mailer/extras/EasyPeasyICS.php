@@ -4,7 +4,7 @@
 /* EasyPeasyICS
 /* ------------------------------------------------------------------------ */
 /* Manuel Reinhard, manu@sprain.ch
-/* Twitter: @sprain
+/* instagram: @sprain
 /* Web: www.sprain.ch
 /*
 /* Built with inspiration by

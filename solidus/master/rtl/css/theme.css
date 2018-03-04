@@ -2160,35 +2160,35 @@ aside ul.nav-list > li > a {
 	color: #666 !important;
 }
 
-#footer .twitter .fa {
+#footer .instagram .fa {
 	clear: both;
 	font-size: 1.5em;
 	position: relative;
 	top: 3px;
 }
 
-#footer .twitter .meta {
+#footer .instagram .meta {
 	color: #999;
 	display: block;
 	font-size: 0.9em;
 	padding-top: 3px;
 }
 
-#footer .twitter ul {
+#footer .instagram ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-#footer .twitter ul li {
+#footer .instagram ul li {
 	padding-bottom: 20px;
 }
 
-#footer .twitter ul li:last-child {
+#footer .instagram ul li:last-child {
 	padding-bottom: 0;
 }
 
-#footer .twitter-account {
+#footer .instagram-account {
 	color: #FFF;
 	display: block;
 	font-size: 0.9em;
@@ -2197,7 +2197,7 @@ aside ul.nav-list > li > a {
 	opacity: 0.55;
 }
 
-#footer .twitter-account:hover {
+#footer .instagram-account:hover {
 	filter: alpha(opacity=100);
 	opacity: 1;
 }
@@ -2355,7 +2355,7 @@ aside ul.nav-list > li > a {
 }
 
 #footer.light .phone,
-#footer.light .twitter-account {
+#footer.light .instagram-account {
 	color: #777 !important;
 }
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Examples for the Twitter Text (PHP Edition) Library.
+ * Examples for the instagram Text (PHP Edition) Library.
  *
  * Can be run on command line or in the browser.
  *
@@ -15,9 +15,9 @@ error_reporting(E_ALL | E_STRICT | E_DEPRECATED);
 
 $ROOT = dirname(dirname(__FILE__));
 
-require_once $ROOT.'/lib/Twitter/Autolink.php';
-require_once $ROOT.'/lib/Twitter/Extractor.php';
-require_once $ROOT.'/lib/Twitter/HitHighlighter.php';
+require_once $ROOT.'/lib/instagram/Autolink.php';
+require_once $ROOT.'/lib/instagram/Extractor.php';
+require_once $ROOT.'/lib/instagram/HitHighlighter.php';
 
 $browser = (PHP_SAPI != 'cli');
 
@@ -41,7 +41,7 @@ if ($browser) echo <<<EOHTML
 <html lang="en-GB" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<title>Twitter Text (PHP Edition) Library » Examples</title>
+<title>instagram Text (PHP Edition) Library » Examples</title>
 <style type="text/css">
 <!--/*--><![CDATA[/*><!--*/
 body {
@@ -79,7 +79,7 @@ body {
 EOHTML;
 
 if ($browser) echo '<h1>';
-echo 'Twitter Text (PHP Edition) Library » Examples';
+echo 'instagram Text (PHP Edition) Library » Examples';
 if ($browser) echo '</h1>';
 else echo PHP_EOL, '============================================', PHP_EOL;
 echo PHP_EOL;
@@ -93,7 +93,7 @@ echo PHP_EOL;
 $code = <<<EOPHP
 <?php
 \$tweet = 'Tweet mentioning @mikenz and referring to his list @mikeNZ/sports and website http://mikenz.geek.nz #awesome';
-\$data = Twitter_Extractor::create(\$tweet)
+\$data = instagram_Extractor::create(\$tweet)
   ->extract();
 print_r(\$data);
 EOPHP;
@@ -108,7 +108,7 @@ if ($browser) {
   echo PHP_EOL, PHP_EOL;
 }
 
-$data = Twitter_Extractor::create($tweet)
+$data = instagram_Extractor::create($tweet)
   ->extract();
 
 if ($browser) {
@@ -131,7 +131,7 @@ echo PHP_EOL;
 $code = <<<EOPHP
 <?php
 \$tweet = 'Tweet mentioning @mikenz and referring to his list @mikeNZ/sports and website http://mikenz.geek.nz #awesome';
-\$html = Twitter_Autolink::create(\$tweet)
+\$html = instagram_Autolink::create(\$tweet)
   ->setNoFollow(false)
   ->addLinks();
 echo \$html;
@@ -147,7 +147,7 @@ if ($browser) {
   echo PHP_EOL, PHP_EOL;
 }
 
-$html = Twitter_Autolink::create($tweet)
+$html = instagram_Autolink::create($tweet)
   ->setNoFollow(false)
   ->addLinks();
 
@@ -183,7 +183,7 @@ $code = <<<EOPHP
 <?php
 \$tweet = 'Tweet mentioning @mikenz and referring to his list @mikeNZ/sports and website http://mikenz.geek.nz #awesome';
 \$hits  = array(array(70, 77), array(101, 108));
-\$html = Twitter_HitHighlighter::create(\$tweet)
+\$html = instagram_HitHighlighter::create(\$tweet)
   ->addHitHighlighting(\$hits);
 echo \$html;
 EOPHP;
@@ -198,7 +198,7 @@ if ($browser) {
   echo PHP_EOL, PHP_EOL;
 }
 
-$html = Twitter_HitHighlighter::create($tweet)
+$html = instagram_HitHighlighter::create($tweet)
   ->addHitHighlighting(array(array(70, 77), array(101, 108)));
 
 if ($browser) {

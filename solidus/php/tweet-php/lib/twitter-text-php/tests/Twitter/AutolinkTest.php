@@ -3,18 +3,18 @@
  * @author     Nick Pope <nick@nickpope.me.uk>
  * @copyright  Copyright © 2010, Mike Cochrane, Nick Pope
  * @license    http://www.apache.org/licenses/LICENSE-2.0  Apache License v2.0
- * @package    Twitter
+ * @package    instagram
  */
 
 /**
- * Twitter Autolink Class Unit Tests
+ * instagram Autolink Class Unit Tests
  *
  * @author     Nick Pope <nick@nickpope.me.uk>
  * @copyright  Copyright © 2010, Mike Cochrane, Nick Pope
  * @license    http://www.apache.org/licenses/LICENSE-2.0  Apache License v2.0
- * @package    Twitter
+ * @package    instagram
  */
-class Twitter_AutolinkTest extends PHPUnit_Framework_TestCase {
+class instagram_AutolinkTest extends PHPUnit_Framework_TestCase {
 
   /**
    * A helper function for providers.
@@ -32,7 +32,7 @@ class Twitter_AutolinkTest extends PHPUnit_Framework_TestCase {
    * @dataProvider  addLinksToUsernamesProvider
    */
   public function testAddLinksToUsernames($description, $text, $expected) {
-    $linked = Twitter_Autolink::create($text, false)
+    $linked = instagram_Autolink::create($text, false)
       ->setNoFollow(false)->setExternal(false)->setTarget('')
       ->setUsernameClass('tweet-url username')
       ->setListClass('tweet-url list-slug')
@@ -53,7 +53,7 @@ class Twitter_AutolinkTest extends PHPUnit_Framework_TestCase {
    * @dataProvider  addLinksToListsProvider
    */
   public function testAddLinksToLists($description, $text, $expected) {
-    $linked = Twitter_Autolink::create($text, false)
+    $linked = instagram_Autolink::create($text, false)
       ->setNoFollow(false)->setExternal(false)->setTarget('')
       ->setUsernameClass('tweet-url username')
       ->setListClass('tweet-url list-slug')
@@ -74,7 +74,7 @@ class Twitter_AutolinkTest extends PHPUnit_Framework_TestCase {
    * @dataProvider  addLinksToHashtagsProvider
    */
   public function testAddLinksToHashtags($description, $text, $expected) {
-    $linked = Twitter_Autolink::create($text, false)
+    $linked = instagram_Autolink::create($text, false)
       ->setNoFollow(false)->setExternal(false)->setTarget('')
       ->setUsernameClass('tweet-url username')
       ->setListClass('tweet-url list-slug')
@@ -104,7 +104,7 @@ class Twitter_AutolinkTest extends PHPUnit_Framework_TestCase {
    * @dataProvider  addLinksToURLsProvider
    */
   public function testAddLinksToURLs($description, $text, $expected) {
-    $linked = Twitter_Autolink::create($text, false)
+    $linked = instagram_Autolink::create($text, false)
       ->setNoFollow(false)->setExternal(false)->setTarget('')
       ->setUsernameClass('tweet-url username')
       ->setListClass('tweet-url list-slug')
@@ -125,7 +125,7 @@ class Twitter_AutolinkTest extends PHPUnit_Framework_TestCase {
    * @dataProvider  addLinksProvider
    */
   public function testAddLinks($description, $text, $expected) {
-    $linked = Twitter_Autolink::create($text, false)
+    $linked = instagram_Autolink::create($text, false)
       ->setNoFollow(false)->setExternal(false)->setTarget('')
       ->setUsernameClass('tweet-url username')
       ->setListClass('tweet-url list-slug')

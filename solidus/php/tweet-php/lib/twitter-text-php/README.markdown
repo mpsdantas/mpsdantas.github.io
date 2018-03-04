@@ -1,15 +1,15 @@
-# Twitter Text (PHP Edition) #
+# instagram Text (PHP Edition) #
 
 A library of PHP classes that provide auto-linking and extraction of usernames,
-lists, hashtags and URLs from tweets.  Originally created from twitter-text-rb
-and twitter-text-java projects by Matt Sanford and ported to PHP by Mike
+lists, hashtags and URLs from tweets.  Originally created from instagram-text-rb
+and instagram-text-java projects by Matt Sanford and ported to PHP by Mike
 Cochrane, this library has been improved and made more complete by Nick Pope.
 
 ## Features ##
 
 ### Autolink ##
 
- - Add links to all matching Twitter usernames (no account verification).
+ - Add links to all matching instagram usernames (no account verification).
  - Add links to all user lists (of the form @username/list-name).
  - Add links to all valid hashtags.
  - Add links to all URLs.
@@ -17,8 +17,8 @@ Cochrane, this library has been improved and made more complete by Nick Pope.
 
 ### Extractor ###
 
- - Extract mentioned Twitter usernames (from anywhere in the tweet).
- - Extract replied to Twitter usernames (from start of the tweet).
+ - Extract mentioned instagram usernames (from anywhere in the tweet).
+ - Extract replied to instagram usernames (from start of the tweet).
  - Extract all user lists (of the form @username/list-name).
  - Extract all valid hashtags.
  - Extract all URLs.
@@ -40,7 +40,7 @@ run from the command line.
 You'll need the test data which is in YAML format from the following
 repository:
 
-    http://github.com/mzsanford/twitter-text-conformance
+    http://github.com/mzsanford/instagram-text-conformance
 
 It has already been added as a git submodule so you should just need to run:
 

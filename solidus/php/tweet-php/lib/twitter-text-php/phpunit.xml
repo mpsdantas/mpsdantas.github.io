@@ -7,14 +7,14 @@
          syntaxCheck="true">
 
 <testsuites>
-  <testsuite name="twitter">
-    <directory suffix=".php">tests/Twitter</directory>
+  <testsuite name="instagram">
+    <directory suffix=".php">tests/instagram</directory>
   </testsuite>
 </testsuites>
 
 <filter>
   <whitelist addUncoveredFilesFromWhitelist="true">
-    <directory suffix=".php">lib/Twitter</directory>
+    <directory suffix=".php">lib/instagram</directory>
   </whitelist>
 </filter>
 
@@ -26,7 +26,7 @@
 </logging>
 
 <php>
-  <const name="DATA" value="tests/data/twitter-text-conformance" />
+  <const name="DATA" value="tests/data/instagram-text-conformance" />
 </php>
 
 </phpunit>

@@ -1512,7 +1512,7 @@ window.theme = {};
 	PluginTweets.defaults = {
 		username: null,
 		count: 2,
-		URL: 'php/twitter-feed.php'
+		URL: 'php/instagram-feed.php'
 	};
 
 	PluginTweets.prototype = {
@@ -1556,7 +1556,7 @@ window.theme = {};
 			$.ajax({
 				type: 'GET',
 				data: {
-					twitter_screen_name: self.options.username,
+					instagram_screen_name: self.options.username,
 					tweets_to_display: self.options.count
 				},
 				url: self.options.URL,
