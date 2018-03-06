@@ -1,10 +1,3 @@
-/*
-Name: 			Theme Base
-Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	3.7.0
-*/
-
-// Theme
 window.theme = {};
 
 // Animate
@@ -1689,7 +1682,7 @@ window.theme = {};
 					e.preventDefault();
 					$.get(self.options.refreshCaptchaURL, function(url) {
 						$('#captcha-image').attr('src', url);
-					});					
+					});
 				});
 
 			},
@@ -1802,9 +1795,9 @@ window.theme = {};
 
 // Word Rotate
 (function(theme, $) {
-	
+
 	theme = theme || {};
-	
+
 	var instanceName = '__wordRotate';
 
 	var PluginWordRotate = function($el, opts) {
@@ -1861,7 +1854,7 @@ window.theme = {};
 				.width(firstItem.width() + "px")
 				.append(firstItemClone);
 
-			$el				
+			$el
 				.addClass("active");
 
 			setInterval(function() {
@@ -1910,7 +1903,7 @@ window.theme = {};
 			} else {
 				return new PluginWordRotate($this, opts);
 			}
-			
+
 		});
 	}
 
@@ -2487,7 +2480,7 @@ window.theme = {};
 						}, 200, function() {
 							$.event.trigger({
 								type: "stickyMenu.active"
-							});						
+							});
 						});
 
 					}
@@ -2520,7 +2513,7 @@ window.theme = {};
 							}, 200, function() {
 								$.event.trigger({
 									type: "stickyMenu.deactive"
-								});						
+								});
 							});
 
 						}

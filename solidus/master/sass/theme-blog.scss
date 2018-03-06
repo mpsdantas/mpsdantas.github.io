@@ -1,12 +1,5 @@
-/*
-Name: 			theme-blog.css
-Written by: 	Okler Themes - (http://www.okler.net)
-Version: 		@@version
-*/
-
-//COMMON IMPORTS
 @import "config/imports";
- 
+
 /* Posts */
 .blog-posts {
 	article {
@@ -348,6 +341,6 @@ ul.simple-post-list {
 		.comment-arrow {
 			display: none;
 		}
-	}	
+	}
 
 }
