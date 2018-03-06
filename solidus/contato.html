@@ -72,13 +72,13 @@
 				<div class="container">
 					<ul class="social-icons">
 						<li class="facebook">
-							<a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a>
+							<a href="http://facebook.com/solidusjunior" target="_blank" title="Facebook">Facebook</a>
 						</li>
 						<li class="instagram">
-							<a href="http://www.instagram.com/" target="_blank" title="instagram">instagram</a>
+							<a href="https://www.instagram.com/solidusjunior/" target="_blank" title="instagram">instagram</a>
 						</li>
 						<li class="linkedin">
-							<a href="http://www.linkedin.com/" target="_blank" title="Linkedin">Linkedin</a>
+							<a href="https://www.linkedin.com/company/solidusjr/?originalSubdomain=pt" target="_blank" title="Linkedin">Linkedin</a>
 						</li>
 					</ul>
 					<nav class="nav-main mega-menu">
@@ -155,13 +155,13 @@
 
 						<h2 class="short">
 							<strong>Enviar email</strong></h2>
-						<form id="contactForm" action="php/contact-form.php" method="POST">
+						<form id="formularioEnvio">
+						<!--<form id="contactForm" action="php/contact-form.php" method="POST">-->
 							<div class="row">
 								<div class="form-group">
 									<div class="col-md-6">
 										<label>Seu nome *</label>
-										<input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name"
-										    id="name" required>
+										<input id="nome" type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" required>
 									</div>
 									<div class="col-md-6">
 										<label>Seu endereço de email *</label>
@@ -175,7 +175,7 @@
 									<div class="col-md-12">
 										<label>Assunto</label>
 										<input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject"
-										    id="subject" required>
+										    id="assunto" required>
 									</div>
 								</div>
 							</div>
@@ -183,7 +183,7 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<label>Mensagem *</label>
-										<textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" id="message"
+										<textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" id="mensagem"
 										    required></textarea>
 									</div>
 								</div>
@@ -216,7 +216,7 @@
 							<li>
 								<i class="fa fa-envelope"></i>
 								<strong>Email:</strong>
-								<a href="mailto:mail@example.com">mail@example.com</a>
+								<a href="mailto:contato@solidusjr.com">contato@solidusjr.com</a>
 							</li>
 						</ul>
 
@@ -262,7 +262,7 @@
 											<p>
 												<i class="fa fa-envelope"></i>
 												<strong>Email:</strong>
-												<a href="mailto:mail@example.com">mail@example.com</a>
+												<a href="mailto:contato@solidusjr.com">contato@solidusjr.com</a>
 											</p>
 										</li>
 									</ul>
@@ -273,13 +273,13 @@
 								<div class="social-icons">
 									<ul class="social-icons">
 										<li class="facebook">
-											<a href="http://www.facebook.com/" target="_blank" data-placement="bottom" data-tooltip title="Facebook">Facebook</a>
+											<a href="http://facebook.com/solidusjunior" target="_blank" data-placement="bottom" data-tooltip title="Facebook">Facebook</a>
 										</li>
 										<li class="instagram">
-											<a href="http://www.instagram.com/" target="_blank" data-placement="bottom" data-tooltip title="instagram">instagram</a>
+											<a href="https://www.instagram.com/solidusjunior/" target="_blank" data-placement="bottom" data-tooltip title="instagram">instagram</a>
 										</li>
 										<li class="linkedin">
-											<a href="http://www.linkedin.com/" target="_blank" data-placement="bottom" data-tooltip title="Linkedin">Linkedin</a>
+											<a href="https://www.linkedin.com/company/solidusjr/?originalSubdomain=pt" target="_blank" data-placement="bottom" data-tooltip title="Linkedin">Linkedin</a>
 										</li>
 									</ul>
 								</div>
@@ -334,7 +334,8 @@
 	<!-- Theme Initialization Files -->
 	<script src="js/theme.init.js"></script>
 
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyDOlXZlIGlWGdwhf8AXlzUuT1xR4AfjSps"></script>
+	
 	<script>
 		// Map Markers
 		var mapMarkers = [{
@@ -377,6 +378,41 @@
 			e.preventDefault();
 			$("#googlemaps").gMap("centerAt", options);
 		}
+	</script>
+	<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	<script type="text/javascript">
+	   (function(){
+	      emailjs.init("user_cScDuw8F6Mgyt4x343KDF");
+	   })();
+	</script>
+	<script>
+		$( document ).ready(function() {
+			$('#formularioEnvio').submit(function(e){
+				e.preventDefault();
+				const nome = $('#nome').val();
+				const email = $('#email').val();
+				const assunto = $('#assunto').val();
+				const mensagem = $('#mensagem').val();
+				emailjs.send("gmail","template_qZspLGWj",{
+					nome: nome,
+					email: email,
+					assunto: assunto,
+					mensagem: mensagem
+					})
+					.then(
+					function(response) {
+						alert("Mensagem enviada com sucesso!");
+						$('#nome').val('');
+						$('#email').val('');
+						$('#assunto').val('');
+						$('#mensagem').val('');
+					},
+					function(error) {
+						alert("Problema ao enviar mensagem!");
+					}
+				);
+			});
+		});
 	</script>
 </body>
 
