@@ -190,7 +190,7 @@
 							</div>
 							<div class="row">
 								<div class="col-md-12">
-									<input type="submit" value="Enviar" class="btn btn-primary btn-lg" data-loading-text="Loading...">
+									<input id="enviar" type="submit" value="Enviar" class="btn btn-primary btn-lg" data-loading-text="Loading...">
 								</div>
 							</div>
 						</form>
@@ -387,6 +387,8 @@
 				const email = $('#email').val();
 				const assunto = $('#assunto').val();
 				const mensagem = $('#mensagem').val();
+				$('#enviar').prop('disabled', true);
+
 				emailjs.send("gmail","template_qZspLGWj",{
 					nome: nome,
 					email: email,
@@ -400,12 +402,15 @@
 						$('#email').val('');
 						$('#assunto').val('');
 						$('#mensagem').val('');
+						$('#enviar').prop('disabled', false);
 					},
 					function(error) {
 						alert("Problema ao enviar mensagem!");
+						$('#enviar').prop('disabled', false);
 					}
 				);
 			});
+
 		});
 	</script>
 </body>
