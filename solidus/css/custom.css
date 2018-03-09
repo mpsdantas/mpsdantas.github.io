@@ -1,6 +1,6 @@
 /* Add here all your CSS customizations */
 .nav-main.mega-menu .nav.nav-pills.nav-main>li{
-    
+
 }
 nav>ul>li>a{
     color:#212121;
@@ -14,3 +14,33 @@ h1,h2,h3,h4,h5,h6{
 #header{
     margin-bottom: -15px;
 }
+/* sm */
+@media screen and (max-width: 768px) {
+
+}
+@media screen and (min-width: 768px) {
+  .ajuste-margem{
+    margin-left: -75px;
+  }
+  .ajuste-visao{
+    margin-left:80px;
+  }
+  .ajuste-text{
+    margin-left: 140px;
+  }
+  .ajuste-descricao{
+    margin-bottom:50px;
+    margin-left: 70px;
+  }
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+
+}
+
+/* lg */
+@media screen and (min-width: 1200px) {
+
+}
+/* Fim Media queries */

@@ -177,60 +177,57 @@
 						<span class="cloud"></span>
 						<div class="col-md-2 col-md-offset-1">
 							<div class="process-image" data-appear-animation="bounceIn">
-								<a href="" alt="tedasd">
-									<img src="img/missao.jpg" alt="“Ser a força Motriz para os membros impactarem o mercado ao trazer prática a uma teoria sólida.”" />
-								</a>
-								
-								<strong>Missão</strong>
+
+									<img id="passarMouseMissao" src="img/missao.jpg" />
+
+
+									<strong>Missão</strong>
+
 							</div>
+							<p id="mostrarMissao" style="margin-top:5px; text-align:center;">
+								<br><br>
+										“Ser a força Motriz para os
+										membros impactarem o
+										mercado ao trazer prática
+										a uma teoria sólida. ”
+							</p>
 						</div>
 						<div class="col-md-1">
 
 						</div>
 						<div class="col-md-2">
-							<div class="process-image" data-appear-animation="bounceIn" data-appear-animation-delay="200">
-								<img src="img/valores.jpg" alt="" />
-								<strong>Visão</strong>
-							</div>
-						</div>
-						<div class="col-md-1">
-
-						</div>
-						<div class="col-md-4 col-md-offset-1">
 							<div class="project-image">
 								<div id="fcSlideshow" class="fc-slideshow">
 									<ul class="fc-slides">
 										<li>
-
 											<img class="img-responsive" src="img/valores1.jpg" />
-
-											<strong style="margin-top:32px;" class="our-work">Dinamismo</strong>
+											<strong style="margin-top:32px;" class="our-work ajuste-margem">Dinamismo</strong>
 										</li>
 										<li>
 											<a href="portfolio-single-project.html">
 												<img class="img-responsive" src="img/valores2.jpg" />
 											</a>
-											<strong style="margin-top:32px;" class="our-work">Integridade</strong>
+											<strong style="margin-top:32px;" class="our-work ajuste-margem">Integridade</strong>
 										</li>
 										<li>
 											<a href="portfolio-single-project.html">
 												<img class="img-responsive" src="img/valores3.jpg" />
 											</a>
-											<strong style="margin-top:32px;" class="our-work">Paixão pelo que fazemos</strong>
+											<strong style="margin-top:32px;" class="our-work ajuste-margem">Paixão pelo que fazemos</strong>
 										</li>
 										<li>
 											<a href="portfolio-single-project.html">
 												<img class="img-responsive" src="img/valores4.jpg" />
 
 											</a>
-											<strong style="margin-top:32px;" class="our-work">Originalidade</strong>
+											<strong style="margin-top:32px;" class="our-work ajuste-margem">Originalidade</strong>
 										</li>
 										<li>
 											<a href="portfolio-single-project.html">
 												<img class="img-responsive" src="img/valores5.jpg" />
 
 											</a>
-											<strong style="margin-top:32px;"  class="our-work">Busca pela
+											<strong style="margin-top:32px;"  class="our-work ajuste-margem">Busca pela
 excelência</strong>
 										</li>
 										<li>
@@ -238,12 +235,34 @@ excelência</strong>
 												<img class="img-responsive" src="img/valores6.jpg" />
 
 											</a>
-											<strong style="margin-top:32px;" class="our-work">União</strong>
+											<strong style="margin-top:32px;" class="our-work ajuste-margem">União</strong>
 										</li>
 									</ul>
 								</div>
 
 							</div>
+
+						</div>
+						<div class="col-md-1">
+
+						</div>
+						<div class="col-md-4 col-md-offset-1">
+							<div class="project-image">
+
+								<img class="img-responsive ajuste-visao"  id="passarMouseVisao" src="img/valores.jpg" alt="" />
+								<strong class="ajuste-text">Visão</strong>
+							</div>
+							<p class="ajuste-descricao" id="mostrarVisao" style="margin-top:5px; text-align:center;">
+								
+								“Ser
+								uma
+								empresa
+								consolidada, referência na
+								formação de profissionais
+								capacitados, com serviços
+								de qualidade e potencial
+								inovador. ”
+							</p>
 						</div>
 					</div>
 
@@ -401,7 +420,7 @@ excelência</strong>
 						<h2 class="short word-rotator-title">
 							<strong>
 								<span class="word-rotate" data-plugin-options='{"delay": 3500, "animDelay": 400}'>
-									<span class="word-rotate-items">
+									<span class="">
 										<span>Parceiros</span>
 									</span>
 								</span>
@@ -527,6 +546,26 @@ excelência</strong>
 
 	<!-- Theme Initialization Files -->
 	<script src="js/theme.init.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#mostrarMissao').hide();
+			$('#mostrarVisao').hide();
+			$('#passarMouseMissao').mouseover(function(){
+			  $('#mostrarMissao').fadeIn(200);
+			});
+
+			$('#passarMouseMissao').mouseout(function(){
+			  $('#mostrarMissao').css('display', 'none');
+			});
+			$('#passarMouseVisao').mouseover(function(){
+			  $('#mostrarVisao').fadeIn(200);
+			});
+
+			$('#passarMouseVisao').mouseout(function(){
+			  $('#mostrarVisao').css('display', 'none');
+			});
+		});
+	</script>
 </body>
 
 </html>
